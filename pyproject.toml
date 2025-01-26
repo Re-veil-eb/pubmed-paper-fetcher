@@ -1,0 +1,26 @@
+[project]
+name = "pubmed-paper-fetcher"
+version = "0.1.0"
+description = "A tool to fetch PubMed papers with non-academic author affiliations."
+authors = [
+    {name = "Re-veil-eB", email = "yuvarajubasa004@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "click (>=8.1.8,<9.0.0)"
+]
+license = "MIT"
+keywords = ["PubMed", "research", "papers", "fetcher"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_paper_fetcher.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest (>=7.0,<8.0)", "responses (>=0.23,<0.24)"]
